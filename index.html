@@ -55,18 +55,15 @@
     <div class="px-5 mt-4 relative overflow-hidden">
         <div id="carousel-track" class="carousel-track gap-3">
             <div class="shrink-0 w-[90%] h-44 relative rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                <img src="https://linkuei0425.github.io/ChiangMai/A.jpeg
-" alt="清邁古城">
+                <img src="https://linkuei0425.github.io/ChiangMai/A.jpeg" alt="清邁古城">
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3"><span class="text-white font-bold text-sm tracking-wide">絕美清邁古城之旅</span></div>
             </div>
             <div class="shrink-0 w-[90%] h-44 relative rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                <img src="https://linkuei0425.github.io/ChiangMai/B.jpeg
-" alt="清萊藍廟">
+                <img src="https://linkuei0425.github.io/ChiangMai/B.jpeg" alt="清萊藍廟">
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3"><span class="text-white font-bold text-sm tracking-wide">清萊藍廟之旅</span></div>
             </div>
             <div class="shrink-0 w-[90%] h-44 relative rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                <img src="https://linkuei0425.github.io/ChiangMai/C.jpeg
-" alt="大象保護區">
+                <img src="https://linkuei0425.github.io/ChiangMai/C.jpeg" alt="大象保護區">
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3"><span class="text-white font-bold text-sm tracking-wide">探索大象保護園區</span></div>
             </div>
         </div>
@@ -83,7 +80,9 @@
             
             <button onclick="window.open('https://linkuei0425.github.io/ChiangMai/food.html', '_blank')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-orange-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(249,115,22,0.2)]"><i class="ph ph-fork-knife text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">美食推薦</span></button>
             <button onclick="window.open('https://linkuei0425.github.io/ChiangMai/shopping.html', '_blank')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-rose-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(244,63,94,0.2)]"><i class="ph ph-handbag text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">購物推薦</span></button>
-            <button onclick="window.openModal('itineraryModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-pink-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(236,72,153,0.2)]"><i class="ph ph-calendar-check text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">行程表</span></button>
+            
+            <!-- 行程表 (外連) -->
+            <button onclick="window.open('https://linkuei0425.github.io/ChiangMai/S.html', '_blank')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-pink-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(236,72,153,0.2)]"><i class="ph ph-calendar-check text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">行程表</span></button>
             
             <button onclick="window.open('https://linkuei0425.github.io/ChiangMai/trip.html', '_blank')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-emerald-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(16,185,129,0.2)]"><i class="ph ph-ticket text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">行程推薦</span></button>
             
@@ -262,25 +261,6 @@
                     <a id="attr-map-link" href="#" target="_blank" class="block w-full bg-blue-600 text-center py-3.5 rounded-xl font-bold shadow-lg mt-2">開啟GOOGLE導航</a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- 行程表 Modal -->
-    <div id="itineraryModal" class="fixed inset-0 bg-teal-950 z-[80] hidden opacity-0 transition-opacity duration-300 flex flex-col max-w-[414px] mx-auto">
-        <div class="bg-itinerary-gradient text-white pt-10 pb-6 px-5 flex justify-between items-center shadow-md z-10"><h2 class="font-bold text-lg">完美行程表</h2><button onclick="window.closeModal('itineraryModal')"><i class="ph ph-x text-2xl"></i></button></div>
-        <div class="p-4 flex-1 overflow-y-auto bg-teal-950 no-scrollbar text-white">
-            <div class="flex gap-2 mb-5 overflow-x-auto no-scrollbar pb-1" id="itin-tabs-header">
-                <button onclick="window.renderItin('day1')" id="btn-itin-day1" class="itin-btn bg-teal-600 px-4 py-2 rounded-lg text-xs font-bold shadow-md shrink-0">Day 1：古城巡禮</button>
-                <button onclick="window.renderItin('day2')" id="btn-itin-day2" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">Day 2：尼曼文青</button>
-                <button onclick="window.renderItin('day3')" id="btn-itin-day3" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">Day 3：雙龍寺與市場</button>
-                <button onclick="window.renderItin('day4')" id="btn-itin-day4" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">Day 4：週末市集</button>
-                <button onclick="window.renderItin('day5')" id="btn-itin-day5" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">Day 5：湄林自然</button>
-                <button onclick="window.renderItin('chiangrai')" id="btn-itin-chiangrai" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">清萊：白藍黑廟</button>
-                <button onclick="window.renderItin('pai')" id="btn-itin-pai" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">拜縣：山林秘境</button>
-                <button onclick="window.renderItin('inthanon')" id="btn-itin-inthanon" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">茵他儂：最高峰</button>
-                <button onclick="window.renderItin('elephant')" id="btn-itin-elephant" class="itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0">大象營：友善體驗</button>
-            </div>
-            <div id="itin-list" class="space-y-5 pb-8 relative"></div>
         </div>
     </div>
 
@@ -645,53 +625,6 @@ const essData = {
     ]
 };
 
-// --- 清邁專屬行程表資料 ---
-const itineraryData = {
-    day1: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>塔佩門 (Tha Phae Gate) & 柴迪隆寺</span><br>清邁古城的東門，早晨光線最適合在這裡與鴿子拍出絕美照片。接著步行進入古城，參觀歷史悠久、雄偉震撼的柴迪隆寺 (Wat Chedi Luang)。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>帕辛寺 & Fah Lanna Spa 按摩</span><br>參訪蘭納建築代表作帕辛寺，隨後安排在古城內環境極佳的 Fah Lanna Spa 享受一場兩小時的泰式古法按摩，洗去旅途的疲憊。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>鳳飛飛豬腳飯 & 北門小吃街</span><br>前往昌卜克門 (北門) 品嚐清邁必吃的平民美食「鳳飛飛豬腳飯」，體驗在地夜市小吃的魅力。" }
-    ],
-    day2: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>尼曼路商圈 (Nimman Road)</span><br>這裡是清邁最時髦的文青區，充滿了各式特色咖啡館。挑選一家精品咖啡（如 Ristr8to 冠軍拉花咖啡）享受悠閒的泰北早晨。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>One Nimman & Maya 百貨</span><br>逛逛歐式紅磚建築的 One Nimman，選購泰國設計師品牌與香氛。傍晚時分，可以步行至 Maya 百貨頂樓觀景台欣賞夕陽。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>Khao Soi Mae Sai 或 尼曼夜市</span><br>晚餐務必品嚐泰北特有的「金麵 (Khao Soi)」，濃郁的咖哩椰奶湯頭搭配炸脆麵，是來清邁絕對不能錯過的美食。" }
-    ],
-    day3: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>素帖山雙龍寺 (Doi Suthep)</span><br>從清邁大學搭乘雙條車上山。雙龍寺是清邁最神聖的寺廟，金碧輝煌的佛塔在陽光下閃耀，從觀景台還能俯瞰整個清邁市區的壯闊景色。" },
-        { time: "中午", act: "<span class='font-bold text-teal-300'>清邁大學 (CMU) & 悟孟寺 (Wat Umong)</span><br>下山後順遊清邁大學靜心湖，接著前往隱藏在森林中的悟孟寺，穿梭在神秘的隧道佛龕中，感受極致的靜謐。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>清邁大學夜市 (Malin Plaza)</span><br>這裡是當地大學生最愛逛的夜市，有著超高CP值的服飾、美妝與各種平價創意小吃、泰式烤肉。" }
-    ],
-    day4: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>真心市集 (Jing Jai Market)</span><br><b>(限定週末)</b> 全清邁最棒的綠色農夫市集！這裡有極高質感的原創手工藝品、現場手沖咖啡與在地有機農產。建議早起前往，體驗清邁特有的慢活步調。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>瓦洛洛市場 (Warorot Market) & 湄平河畔</span><br>前往清邁最大的傳統市場採買伴手禮，如草莓乾、芒果乾、泰北香腸。隨後沿著湄平河畔散步，找家河畔餐廳喝下午茶。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>週六/週日夜市 (Weekend Walking Street)</span><br><b>週六：Wua Lai 銀器街夜市 / 週日：塔佩門週日夜市</b>。準備好你的體力，這是全亞洲最大、最好逛的手工藝夜市，從街頭吃到街尾！" }
-    ],
-    day5: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>椰林市集 (Baan Kang Wat) 或 湄林 (Mae Rim)</span><br><b>(選項A) 椰林市集：</b>隱藏在森林裡的文創藝術村，可以報名手捏陶藝課程。<br><b>(選項B) 湄林：</b>前往近郊的湄林山區，造訪猶如仙境的懸崖咖啡廳 (如 Ponganes Coffee 或 叢林過山車)。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>蒙佔山 (Mon Jam) 觀景台</span><br>位在湄林更高的山區，這裡曾是皇家農業計畫區，現在開滿了美麗的花海，可以俯瞰壯麗的泰北群山梯田。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>享受最後一頓泰北晚餐</span><br>回到市區，找一家氣氛極佳的蘭納風格餐廳（如 Dash! Restaurant and Bar）享用綠咖哩與香茅烤魚，為清邁之旅畫下完美句點。" }
-    ],
-    chiangrai: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>Mae Khachan 溫泉 & 白廟 (Wat Rong Khun)</span><br>從清邁出發，中途於溫泉休息站泡腳。抵達清萊後，參觀由泰國藝術家設計、宛如天堂般純白無瑕、細節極度震撼的「白廟」。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>藍廟 (Wat Rong Suea Ten) & 黑廟 (Black House)</span><br>欣賞色彩濃烈、充滿現代魔幻感的藍廟。接著前往黑廟（黑屋博物館），觀賞大量由動物骨骸、獸皮與原木組成的獨特前衛藝術展品。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>返回清邁或夜宿清萊</span><br>參加一日遊通常於晚上 8-9 點返回清邁。若自由行則推薦逛逛清萊夜市與鐘樓燈光秀。" }
-    ],
-    pai: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>挺過 762 個彎道抵達拜縣</span><br>從清邁搭乘 Minivan 經歷著名的蜿蜒山路抵達拜縣。租一台機車，開始探索這座群山環繞的悠閒小鎮。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>二戰橋、草莓園 & 拜縣峽谷 (Pai Canyon)</span><br>騎車遊覽可愛的黃色小屋、大樹鞦韆。傍晚前務必抵達拜縣峽谷，走在狹窄驚險的紅土陵線上，欣賞泰北最壯麗的山谷夕陽。" },
-        { time: "晚上", act: "<span class='font-bold text-teal-300'>拜縣夜市 (Pai Walking Street)</span><br>小巧卻充滿異國情調的夜市。這裡聚集了來自世界各地的背包客、嬉皮音樂家，氣氛極度放鬆且迷人。" }
-    ],
-    inthanon: [
-        { time: "上午", act: "<span class='font-bold text-teal-300'>瓦吉拉坦瀑布 (Wachirathan Waterfall)</span><br>出發前往泰國最高峰「茵他儂國家公園」。第一站先參觀水量極度豐沛、水花四濺的壯觀瀑布。" },
-        { time: "中午", act: "<span class='font-bold text-teal-300'>國王與皇后雙塔 (Twin Royal Stupas)</span><br>建於高山上的兩座佛塔，周圍環繞著絕美的皇家高山花園，當雲霧繚繞時宛如仙境。" },
-        { time: "下午", act: "<span class='font-bold text-teal-300'>泰國最高點 & Kew Mae Pan 森林步道</span><br>抵達海拔 2565 公尺的泰國最高點標示牌。若季節允許，強烈建議走一趟 Kew Mae Pan 步道，穿梭在充滿苔蘚的迷霧森林，並在陵線上眺望無敵雲海。" }
-    ],
-    elephant: [
-        { time: "半日/一日", act: "<span class='font-bold text-teal-300'>大象自然保護區 (Elephant Sanctuary)</span><br>請選擇「不騎乘、不看表演」的友善大象營（如 Elephant Nature Park）。換上傳統農夫裝，了解大象的悲慘過去與救援故事。<br><br>體驗親手製作飯糰餵食大象，甚至和牠們一起走到泥巴池裡洗泥巴浴，再到河裡幫牠們刷背沖水。這是來泰北最感動且最具教育意義的自然體驗。" }
-    ]
-};
-
 // --- 功能渲染邏輯 ---
 window.switchEssTab = t => {
     let isC = (t === 'checklist');
@@ -699,12 +632,6 @@ window.switchEssTab = t => {
     document.getElementById('ess-goodies').classList.toggle('hidden', isC);
     document.getElementById('btn-ess-checklist').className = isC ? "flex-1 bg-violet-600 text-white py-2 rounded-lg text-sm font-bold" : "flex-1 bg-slate-800 text-slate-300 border border-slate-700 py-2 rounded-lg text-sm font-bold";
     document.getElementById('btn-ess-goodies').className = !isC ? "flex-1 bg-violet-600 text-white py-2 rounded-lg text-sm font-bold" : "flex-1 bg-slate-800 text-slate-300 border border-slate-700 py-2 rounded-lg text-sm font-bold";
-};
-
-window.renderItin = d => {
-    document.querySelectorAll('.itin-btn').forEach(t => t.className = "itin-btn bg-teal-900 border border-teal-700 px-4 py-2 rounded-lg text-xs text-teal-200 shrink-0");
-    document.getElementById('btn-itin-' + d).className = "itin-btn bg-teal-600 text-white font-bold px-4 py-2 rounded-lg text-xs shadow-md shrink-0";
-    document.getElementById('itin-list').innerHTML = '<div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-teal-800 border-l-2 border-dotted"></div>' + itineraryData[d].map((i, idx) => `<div class="relative pl-8 animate-[fadeIn_0.3s_ease-out]" style="animation-delay: ${idx * 0.05}s"><div class="absolute left-[7px] top-1 w-2.5 h-2.5 bg-teal-400 rounded-full shadow-[0_0_8px_rgba(45,212,191,0.8)]"></div><span class="text-[10px] text-teal-300 font-mono font-bold block mb-0.5">${i.time}</span><div class="bg-teal-900/40 p-3 rounded-xl border border-teal-800/50 text-sm text-white leading-relaxed">${i.act}</div></div>`).join('');
 };
 
 window.resetAttrView = () => { document.getElementById('attr-cat-grid').classList.remove('hidden'); document.getElementById('attr-detail-view').classList.add('hidden'); document.getElementById('attr-result').classList.add('hidden'); };
@@ -951,8 +878,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const eG = document.getElementById('ess-goodies');
     if(eG) eG.innerHTML = essData.good.map(i=>`<div class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700"><div class="w-10 h-10 rounded-full bg-violet-500/20 text-violet-400 flex flex-col justify-center items-center shrink-0"><i class="ph-fill ph-star"></i></div><div><p class="font-bold text-sm text-white">${i.n}</p><p class="text-[11px] text-slate-400">${i.d}</p></div></div>`).join('');
-
-    renderItin('day1');
 
     const aG = document.getElementById('attr-cat-grid');
     if(aG){
