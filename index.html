@@ -19,7 +19,6 @@
         .bg-food-gradient { background: linear-gradient(135deg, #ea580c 0%, #e11d48 100%); }
         .bg-itinerary-gradient { background: linear-gradient(135deg, #059669 0%, #0284c7 100%); }
         .bg-hotel-gradient { background: linear-gradient(135deg, #4338ca 0%, #3b82f6 100%); }
-        .bg-essentials-gradient { background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%); }
         
         /* 將原本的河運藍色改為代表城際小巴的暖棕橘色 */
         .bg-van-gradient { background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%); }
@@ -73,6 +72,9 @@
     <div class="px-5 mt-4">
         <h2 class="text-sm font-bold text-gray-500 mb-4 px-1">快速導航工具</h2>
         <div class="grid grid-cols-4 gap-y-6 gap-x-3">
+            <!-- 旅遊必備 (移至第一位並改為外連) -->
+            <button onclick="window.open('https://linkuei0425.github.io/togeter/buy.html', '_blank')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-violet-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(139,92,246,0.2)]"><i class="ph ph-suitcase text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">旅遊必備</span></button>
+
             <button onclick="window.openModal('airportModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-sky-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(14,165,233,0.2)]"><i class="ph ph-airplane-tilt text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">機場攻略</span></button>
             <button onclick="window.openModal('mapModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-teal-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(20,184,166,0.2)]"><i class="ph ph-bus text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">公車路線</span></button>
             <button onclick="window.openModal('boatModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-orange-600 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(234,88,12,0.2)]"><i class="ph ph-van text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">城際交通</span></button>
@@ -91,7 +93,6 @@
             <!-- 全球通 (外連) -->
             <button onclick="window.open('https://linkuei0425.github.io/togeter/go.html', '_blank')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-cyan-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(6,182,212,0.2)]"><i class="ph ph-globe text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">全球通</span></button>
             
-            <button onclick="window.openModal('essentialsModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-violet-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(139,92,246,0.2)]"><i class="ph ph-suitcase text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">旅遊必備</span></button>
             <button onclick="window.openModal('aboutModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-600 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(71,85,105,0.2)]"><i class="ph ph-info text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">關於我們</span></button>
             
             <button onclick="window.openModal('fanModal')" class="flex flex-col items-center gap-2 group"><div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-red-500 group-active:scale-90 transition-transform shadow-[0_4px_10px_rgba(239,68,68,0.2)]"><i class="ph ph-heart text-3xl"></i></div><span class="text-[11px] font-bold text-gray-700">加入粉絲</span></button>
@@ -261,19 +262,6 @@
                     <a id="attr-map-link" href="#" target="_blank" class="block w-full bg-blue-600 text-center py-3.5 rounded-xl font-bold shadow-lg mt-2">開啟GOOGLE導航</a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- 旅遊必備 Modal -->
-    <div id="essentialsModal" class="fixed inset-0 bg-slate-900 z-[80] hidden opacity-0 transition-opacity duration-300 flex flex-col max-w-[414px] mx-auto shadow-2xl">
-        <div class="bg-essentials-gradient text-white pt-10 pb-6 px-5 flex justify-between items-center"><h2 class="font-bold text-lg">旅遊必備清單</h2><button onclick="window.closeModal('essentialsModal')"><i class="ph ph-x text-2xl"></i></button></div>
-        <div class="bg-slate-900 px-4 pt-3 z-10"><div class="flex gap-2 border-b border-slate-800 pb-2">
-            <button onclick="window.switchEssTab('checklist')" id="btn-ess-checklist" class="flex-1 bg-violet-600 text-white py-2 rounded-lg text-sm font-bold shadow-md transition-all">行前準備</button>
-            <button onclick="window.switchEssTab('goodies')" id="btn-ess-goodies" class="flex-1 bg-slate-800 text-slate-300 border border-slate-700 py-2 rounded-lg text-sm font-bold transition-all">好物推薦</button>
-        </div></div>
-        <div class="p-4 flex-1 overflow-y-auto bg-slate-900 text-white no-scrollbar">
-            <div id="ess-checklist" class="space-y-3 pb-8"></div>
-            <div id="ess-goodies" class="hidden space-y-6 pb-8"></div>
         </div>
     </div>
 
@@ -608,32 +596,6 @@ const attractionsData = [
     }
 ];
 
-const essData = {
-    check: [
-        { n: "護照與簽證文件", d: "確認效期六個月以上。" },
-        { n: "上網 SIM卡", d: "查地圖導航、叫車必備。" },
-        { n: "泰銖現金", d: "清邁雙條車與夜市多用現金。" },
-        { n: "防蚊液與薄外套", d: "山區早晚溫差大且有蚊蟲。" },
-        { n: "暈車藥", d: "前往拜縣或上山必備。" }
-    ],
-    good: [
-        { n: "環保帆布袋", d: "裝逛市集的戰利品。" },
-        { n: "便鞋與防滑涼鞋", d: "進出寺廟需頻繁穿脫鞋。" },
-        { n: "小包面紙/濕紙巾", d: "吃街邊小吃非常實用。" },
-        { n: "隨身小風扇", d: "熱季出遊消暑必備。" },
-        { n: "腸胃藥", d: "水土不服急救。" }
-    ]
-};
-
-// --- 功能渲染邏輯 ---
-window.switchEssTab = t => {
-    let isC = (t === 'checklist');
-    document.getElementById('ess-checklist').classList.toggle('hidden', !isC);
-    document.getElementById('ess-goodies').classList.toggle('hidden', isC);
-    document.getElementById('btn-ess-checklist').className = isC ? "flex-1 bg-violet-600 text-white py-2 rounded-lg text-sm font-bold" : "flex-1 bg-slate-800 text-slate-300 border border-slate-700 py-2 rounded-lg text-sm font-bold";
-    document.getElementById('btn-ess-goodies').className = !isC ? "flex-1 bg-violet-600 text-white py-2 rounded-lg text-sm font-bold" : "flex-1 bg-slate-800 text-slate-300 border border-slate-700 py-2 rounded-lg text-sm font-bold";
-};
-
 window.resetAttrView = () => { document.getElementById('attr-cat-grid').classList.remove('hidden'); document.getElementById('attr-detail-view').classList.add('hidden'); document.getElementById('attr-result').classList.add('hidden'); };
 
 
@@ -872,12 +834,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const bo = document.getElementById('boat-origin'), bd = document.getElementById('boat-dest');
     boatLinesDataLocal.forEach(g => { let opt = `<optgroup label="${g.line}">${g.items.map(i=>`<option value="${i.split(' ')[0]}">${i}</option>`).join('')}</optgroup>`; if(bo) bo.innerHTML += opt; if(bd) bd.innerHTML += opt; });
-
-    const eC = document.getElementById('ess-checklist');
-    if(eC) eC.innerHTML = essData.check.map(i=>`<label class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700 active:scale-95 transition-transform"><input type="checkbox" class="w-5 h-5 rounded mt-0.5 shrink-0 bg-slate-900"><div><p class="font-bold text-sm text-white">${i.n}</p><p class="text-[11px] text-slate-400">${i.d}</p></div></label>`).join('');
-    
-    const eG = document.getElementById('ess-goodies');
-    if(eG) eG.innerHTML = essData.good.map(i=>`<div class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700"><div class="w-10 h-10 rounded-full bg-violet-500/20 text-violet-400 flex flex-col justify-center items-center shrink-0"><i class="ph-fill ph-star"></i></div><div><p class="font-bold text-sm text-white">${i.n}</p><p class="text-[11px] text-slate-400">${i.d}</p></div></div>`).join('');
 
     const aG = document.getElementById('attr-cat-grid');
     if(aG){
